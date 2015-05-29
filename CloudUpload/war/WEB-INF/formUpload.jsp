@@ -72,7 +72,7 @@
 
 				<div class="span4">
 					<figure>
-						<img src="<%=upload.getUrl()%>" alt="Image utilisateur"
+						<img src="<%=upload.getImage()%>" alt="Image utilisateur"
 							class="img-polaroid" style="max-width: 100px;" />
 						<figcaption><a class="close" href="/?delete=<%=upload.getKeyString() %>">&times;</a> <%=upload.getNom()%> <%=upload.getUtilisateur()%> <%=upload.getUrl()%></figcaption>
 					</figure>
