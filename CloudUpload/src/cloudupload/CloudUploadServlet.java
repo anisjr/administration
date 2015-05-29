@@ -46,7 +46,7 @@ public class CloudUploadServlet extends HttpServlet {
         Map<String, List<BlobKey>> blobs = blobstoreService.getUploads(req);
         List<BlobKey> blobKeys = blobs.get("uploadedFile");
 
-        Upload upload = new Upload(blobKeys.get(0), req.getParameter("description"), req.getParameter("login"), req.getParameter("webservice"));
+        Upload upload = new Upload(blobKeys.get(0), req.getParameter("nom"), req.getParameter("utilisateur"), req.getParameter("url"));
 
         ofy().save().entity(upload).now();
 

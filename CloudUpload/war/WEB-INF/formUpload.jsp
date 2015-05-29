@@ -74,7 +74,7 @@
 					<figure>
 						<img src="<%=upload.getUrl()%>" alt="Image utilisateur"
 							class="img-polaroid" style="max-width: 100px;" />
-						<figcaption><a class="close" href="/?delete=<%=upload.getKeyString() %>">&times;</a> <%=upload.getDescription()%> <%=upload.getLogin()%> <%=upload.getWebservice()%></figcaption>
+						<figcaption><a class="close" href="/?delete=<%=upload.getKeyString() %>">&times;</a> <%=upload.getNom()%> <%=upload.getUtilisateur()%> <%=upload.getUrl()%></figcaption>
 					</figure>
 				</div>
 
@@ -103,16 +103,16 @@
 						name="uploadedFile" /></label>
 				</p>
 				<p>
-					<label>Description : <input type="text"
-						name="description" /></label>
+					<label>Nom : <input type="text"
+						name="nom" /></label>
 				</p>
 				<p>
-					<label>Login : <input type="text"
-						name="login" /></label>
+					<label>Utilisateur : <input type="text"
+						name="utilisateur" /></label>
 				</p>
 				<p>
-					<label>Webservice : <input type="text"
-						name="webservice" /></label>
+					<label>url : <input type="text"
+						name="url" /></label>
 				</p>
 				<div class="form-actions">
 					<input type="submit" class="btn" />

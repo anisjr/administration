@@ -14,27 +14,27 @@ import com.googlecode.objectify.annotation.*;
 public class Upload {
     @Id Long id;
     @Index Date date;
-    String url;
+    String image;
     @Index BlobKey key;
-    String description;
-    String login;
-    String webservice;
+    String nom;
+    String utilisateur;
+    String url;
     
     private Upload() {}
-    public Upload(BlobKey key, String description, String login, String webservice) {
+    public Upload(BlobKey key, String nom, String utilisateur, String url) {
         ImagesService imagesService = ImagesServiceFactory.getImagesService();
         
         this.date = new Date();
         this.key = key;
-        this.url = imagesService.getServingUrl(ServingUrlOptions.Builder.withBlobKey(key));
-        this.description = description;
-        this.login = login;
-        this.webservice = webservice;
+        this.image = imagesService.getServingUrl(ServingUrlOptions.Builder.withBlobKey(key));
+        this.nom = nom;
+        this.utilisateur = utilisateur;
+        this.url = url;
     }
     
 
-    public String getUrl() {
-        return url;
+    public String getImage() {
+        return image;
     }
     public BlobKey getKey() {
         return key;
@@ -42,23 +42,23 @@ public class Upload {
     public String getKeyString() {
         return key.getKeyString();
     }
-    public String getDescription() {
-        return description;
+    public String getNom() {
+        return nom;
     }
-    public void setDescription(String description) {
-        this.description = description;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
-    public void setWebservice(String webservice) {
-		this.webservice = webservice;
+    public void setUrl(String url) {
+		this.url = url;
 	}
-    public void setLogin(String email) {
-		this.login = login;
+    public void setUtilisateur(String utilisateur) {
+		this.utilisateur = utilisateur;
 	}
-    public String getWebservice() {
-		return webservice;
+    public String getUrl() {
+		return url;
 	}
-    public String getLogin() {
-		return login;
+    public String getUtilisateur() {
+		return utilisateur;
 	}
     
 }
